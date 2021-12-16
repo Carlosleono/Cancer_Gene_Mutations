@@ -1,0 +1,5 @@
+Notebooks/.ipynb_checkpoints
+data
+models
+src/__pycache__
+.idea
