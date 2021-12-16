@@ -4,9 +4,56 @@
 
 # Problem Statement
 
+A lot has been said during the past several years about how precision medicine and, more concretely, how genetic testing is going to disrupt the way diseases like cancer are treated.
 
+Once sequenced, a cancer tumor can have thousands of genetic mutations. But the challenge is distinguishing the mutations that contribute to tumor growth (drivers) from the neutral mutations (passengers).
 
-# Libraries
+The challenge of this project is to categorize several gene variation in nine classes that represents the effect that this mutation will have in the correspondant protein function. Classes are as follow:
+1. Likely loss-of-function
+2. Likely Gain-of-function
+3. Neutral
+4. Loss-of-function
+5. Likely Neutral
+6. Inconclusive
+7. Gain-of-function
+8. Likely Switch-of-function
+9. Switch-of-function
+
+# Data
+
+## 1. Original data
+
+It consists of a dataframe get from Kaggle with the following information:
+- ID: the id of the row used to link the mutation to the clinical evidence
+
+- Gene: the gene where this genetic mutation is located
+
+- Variation: the aminoacid change for this mutations
+
+- TEXT: text based clinical literature
+
+- Class: 1-9 the class this genetic mutation has been classified on. Classes are as follow:
+
+## 2. Data Enrichment
+
+Obtained from the variant nomenclature system (*Type* of mutation, and *Effect* on the protein), and the Cosmic Cancer Census Database (*GeneType, Chromosome,	Role,	TumourType* and	*Class* )
+
+# Machine Learning
+
+This is a Multiclass classification machine learning problem. It is defined by mostly categorial features, all of them except *Chromosome*. To face it, a One Hot Encoding has been applied to the variables and they have been stacked using *scipy*.
+
+For the TEXT feature, it has been treated by removing the stopwords and getting just the words which are repeated at least three times.
+
+Four models have been used to face this machine learning problem:
+- Binomial Naïve-Bayes Classifier
+- K-nearest neighbour 
+- Logistic Regression
+- Random Forest
+
+Finally, feature engineering has been applied to the best models by removing features to reduce overfitting to the train dataset.
+
+# Libraries # 
+
 [pandas](https://pandas.pydata.org/docs/)
 
 [seaborn](https://seaborn.pydata.org/)
