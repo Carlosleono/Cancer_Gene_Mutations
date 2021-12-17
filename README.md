@@ -1,6 +1,8 @@
 # Cancer_Gene_Mutations
-![Geneticimage](geneImage.jpg)
 
+<p align="center">
+  <img src="geneImage.jpg" />
+</p>
 
 # Problem Statement
 
