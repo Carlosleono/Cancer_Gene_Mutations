@@ -1,7 +1,7 @@
 # Cancer_Gene_Mutations
 
 <p align="center">
-  <img src="geneImage.jpg" width='600' height='250'/>
+  <img src="geneImage.jpg" width='500' height='250'/>
 </p>
 
 # Problem Statement
